@@ -52,8 +52,8 @@ XageTrain = df.dropna(subset=["Age"]).drop(["Age", "PassengerId", "Survived"], a
 yageTrain = df.dropna(subset=["Age"])["Age"]
 
 Xage = df[df["Age"].isnull()].drop(["Age", "PassengerId", "Survived"], axis=1)
-from sklearn.svm import SVR
-ageModel = SVR(kernel="linear")
+from sklearn.linear_model import Lasso
+ageModel = Lasso()
 ageModel.fit(XageTrain, yageTrain)
 yage = ageModel.predict(Xage)
 # This returns some negative ages. Let's turn any negative age into 1 to show very young
@@ -72,7 +72,7 @@ cleanTest = df[df["Survived"].isnull()].drop(["Survived"], axis=1)
 # Train with SVC for now because it had an equally good fit to other stuff on my previous tests (0.785)
 
 from sklearn.svm import SVC
-model = SVC(kernel='linear')
+model = SVC(C=10,kernel='linear')
 
 X_train = cleanTrain.drop(["Survived","PassengerId"], axis=1)
 y_train = cleanTrain["Survived"]
@@ -85,4 +85,4 @@ X_test = cleanTest.drop("PassengerId", axis=1)
 y_test = model.predict(X_test)
 
 output = pd.concat([cleanTest["PassengerId"],pd.DataFrame(y_test.astype(int), columns=["Survived"])], axis=1)
-output.to_csv("AgePredict-fourthTry.csv", index=False)
+output.to_csv("AgePredict-C10.csv", index=False)
