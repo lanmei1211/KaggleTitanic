@@ -13,7 +13,7 @@ predict missing ages using Lasso
 Predict survive using SVC linear  
 The final score was _0.78468_  
 
-###The order of scores and submissions was as follows:
+###The order of scores and submissions was as follows:  
 5_AgeAndTitle - 0.78468  
 6_FewerParams_alltitles - 0.77990  
 6_FewerParams- 0.77033  
