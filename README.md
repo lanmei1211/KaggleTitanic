@@ -14,18 +14,19 @@ Predict survive using SVC linear
 The final score was 0.78468
 
 The order of scores and submissions was as follows:
-5_AgeAndTitle - 0.78468
-6_FewerParams_alltitles - 0.77990
-6_FewerParams- 0.77033
-4_AgePredict - 0.76555
-AgePredict-lasso - 0.76555
-1_FirstTry - 0.76555
-7_GradBoost - 0.76555
-8_dropParamsSVC - 0.76076
-3_RandomForest - 0.72248
+*5_AgeAndTitle - 0.78468
+*6_FewerParams_alltitles - 0.77990
+*6_FewerParams- 0.77033
+*4_AgePredict - 0.76555
+*AgePredict-lasso - 0.76555
+*1_FirstTry - 0.76555
+*7_GradBoost - 0.76555
+*8_dropParamsSVC - 0.76076
+*3_RandomForest - 0.72248
 
 
 The description of models in order of attempt is as follows:
+
 1 - Initial Attempt
 Import data, drop Name, Ticket, Cabin
 Fill nan ages with mean of ages
